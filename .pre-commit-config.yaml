@@ -1,0 +1,27 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: ruff check
+        entry: pixi run -e dev ruff check src/ tests/
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: ruff-format
+        name: ruff format
+        entry: pixi run -e dev ruff format src/ tests/
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: pyrefly
+        name: pyrefly
+        entry: pixi run -e dev typecheck
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: pytest
+        name: pytest
+        entry: pixi run test
+        language: system
+        types: [python]
+        pass_filenames: false
