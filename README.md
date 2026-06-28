@@ -121,9 +121,9 @@ Siga o fluxo para release de uma nova versão:
 
 ```bash
 # 1. Atualizar versão (cria tag automaticamente)
-pixi run -e dev bump        # patch
+pixi run -e dev bump patch       # patch
 pixi run -e dev bump minor  # minor
-pixi run -e dev bump major  # major
+pixi run -e dev bump major # major
 
 # 2. Atualizar changelog
 pixi run -e dev changelog
