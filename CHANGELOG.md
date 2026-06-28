@@ -1,26 +1,14 @@
-# Changelog
+## [unreleased]
 
-All notable changes to this project will be documented in this file.
+### 📚 Documentation
 
-## [0.1.1] - 2026-06-11
+- Corrige instrução do bump
+## [0.1.2] - 2026-06-28
 
-### Features
+### 🚀 Features
 
-- Initial release v0.1.0
+- Início do projeto
 
+### 🐛 Bug Fixes
 
-### Miscellaneous Tasks
-
-- Ignora trailing whitespace no banner
-
-- Corrige URL do logo para repo pluma
-
-- Adiciona readme ao pyproject.toml para PyPI
-
-- Bump para v0.1.1
-
-
-
-[0.1.1]: https://github.com/ericmiguel/pluma/compare/...v0.1.1
-
-
+- Corrige deps no build do pypi
