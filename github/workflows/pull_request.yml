@@ -1,0 +1,33 @@
+name: Pull Request
+
+on: [pull_request]
+
+jobs:
+  check:
+    name: Install and Check Code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Pixi
+        uses: prefix-dev/setup-pixi@v0.9.1
+
+      - name: Install Dependencies
+        run: pixi install --all --locked
+
+      - name: Run lint
+        run: pixi run -e dev lint
+
+      - name: Run tests
+        run: pixi run -e dev test
+
+      - name: Build package
+        run: pixi run -e dev build
+
+      - name: Validate Package
+        run: |
+          python -m venv /tmp/pluvia-test
+          /tmp/pluvia-test/bin/pip install dist/*.whl
+          /tmp/pluvia-test/bin/python -c "import pluvia"
